@@ -1,0 +1,20 @@
+{
+  "name": "Mega_Dumblr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpectro93/Mega_Dumblr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xpectro93/Mega_Dumblr/issues"
+  },
+  "homepage": "https://github.com/xpectro93/Mega_Dumblr#readme"
+}
