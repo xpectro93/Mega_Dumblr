@@ -39,3 +39,7 @@ const SignUp = ({history}) => {
 };
 
 export default withRouter (SignUp);
+
+//signup test user don@test.com
+//CeZlwcstZDS80N20jUyOsRNj2ei2
+//CeZlwcstZDS80N20jUyOsRNj2ei2

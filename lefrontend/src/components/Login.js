@@ -12,7 +12,11 @@ const Login = ({ history }) => {
         let res = await firebase
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-          console.log('Login Res => ', res)
+          //res can b obtained by => res.user.uid
+          console.log('Login Res => ', res);
+         let token = firebase.auth().currentUser.getIdToken(false);
+         //this token can b stored and sent to the backend to allow user to use something that is protected by middleware;token is a obj
+         console.log('Yo, this is my logged in token -> ',token)
         history.push("/");
       } catch (error) {
         alert(error);
@@ -46,3 +50,7 @@ const Login = ({ history }) => {
 };
 
 export default withRouter(Login);
+
+//test user uid;
+//a0B19xDiuJdh5DwjMA5FErIkaQ53
+//a0B19xDiuJdh5DwjMA5FErIkaQ53
