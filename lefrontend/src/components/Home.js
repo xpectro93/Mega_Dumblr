@@ -1,12 +1,13 @@
-import React from 'react';
-import firebase from '../firebase.js';
+import React from "react";
+import firebase from "../firebase";
 
-const Home = _ => {
+const Home = () => {
   return (
     <>
-      <h1>This b HOME</h1>
-      <button onClick={()=>firebase.auth()} > Sign Me the Fuck Out!</button>
+      <h1>Home</h1>
+      <button onClick={() => firebase.auth().signOut()}>Sign out</button>
     </>
-  )
-}
+  );
+};
+
 export default Home;

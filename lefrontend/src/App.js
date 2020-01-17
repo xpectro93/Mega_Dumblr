@@ -1,25 +1,24 @@
-import React from 'react';
-import { Route , Switch } from 'react-router-dom'
-import './App.css';
+  
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import { AuthProvider } from "./Auth";
+import PrivateRoute from "./PrivateRoute";
 
-import { AuthProvider } from "./Auth.js";
-import PrivateRoute from './PrivateRoute.js';
-
-import Home from './components/Home.js';
-import SignUp from './components/SignUp.js';
-
-const App = props =>{
+const App = () => {
   return (
     <AuthProvider>
-      <Switch>
-        <div className="App">
-          <PrivateRoute exact path='/' render={(props)=> <Home {...props}/>}/>
-          <Route exact path='/login'  render={(props)=> <Login {...props}/>} />
-          <Route exact path='/signup'  render={(props)=> <SignUp {...props}/>} />
+      <Router>
+        <div>
+          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
         </div>
-      </Switch>
+      </Router>
     </AuthProvider>
   );
-}
+};
 
 export default App;

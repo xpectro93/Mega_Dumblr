@@ -8,9 +8,10 @@ const SignUp = ({history}) => {
       event.preventDefault ();
       const {email, password} = event.target.elements;
       try {
-        await firebase
+        let res = await firebase
           .auth ()
           .createUserWithEmailAndPassword (email.value, password.value);
+          console.log('Sign-up Res=>',res)
         history.push ('/');
       } catch (error) {
         alert (error);
