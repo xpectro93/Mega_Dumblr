@@ -4,7 +4,6 @@ const serviceAccount = require("./secret.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://dumb-uploader.firebaseio.com"
+  databaseURL: "https://mega-dumblr.firebaseio.com"
 });
-
 module.exports = admin;

@@ -2,6 +2,7 @@ import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import firebase from "../firebase.js";
 import { AuthContext } from "../Auth.js";
+import axios from 'axios';
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -14,9 +15,13 @@ const Login = ({ history }) => {
           .signInWithEmailAndPassword(email.value, password.value);
           //res can b obtained by => res.user.uid
           console.log('Login Res => ', res);
-         let token = firebase.auth().currentUser.getIdToken(false);
+          // TODO: figure out how to get this token to work on backened;
+          //let token = firebase.auth().currentUser.getIdToken(false);
          //this token can b stored and sent to the backend to allow user to use something that is protected by middleware;token is a obj
-         console.log('Yo, this is my logged in token -> ',token)
+         console.log('this is my uid =>', res.user.uid)
+         let call = await axios.get(`http://localhost:3001/api/users/info/${res.user.uid}`);
+         debugger
+         console.log('This is call => ', call);
         history.push("/");
       } catch (error) {
         alert(error);
