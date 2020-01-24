@@ -14,10 +14,23 @@ const Login = ({ history }) => {
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
           //res can b obtained by => res.user.uid
-          console.log('Login Res => ', res);
+
+          // console.log('Login Res => ', res);
+
           // TODO: figure out how to get this token to work on backened;
-          //let token = firebase.auth().currentUser.getIdToken(false);
+          let token = await firebase.auth().currentUser.getIdToken(false);
+          token = {token:token}
+          let testResp = await axios.post('http://localhost:3001/api/users/test',token )
+          console.log('This is tesResp => ', testResp)
          //this token can b stored and sent to the backend to allow user to use something that is protected by middleware;token is a obj
+
+         firebase.auth().onAuthStateChanged(user => {
+           console.log('this is user at onAuthStateChanged => ', user)
+         })
+
+
+
+
          console.log('this is my uid =>', res.user.uid)
          let call = await axios.get(`http://localhost:3001/api/users/info/${res.user.uid}`);
          console.log('This is call => ', call);
@@ -37,7 +50,6 @@ const Login = ({ history }) => {
   // if(currentUser !== null && history.location.pathname === "/login"){
   //   return (<h1>SADAJDHAJKDHLKAJHDJAHDKASHDKJAHDKJASHDAKJDHAKJSHDAKJDHSJK</h1>)
   // }
-  console.log('this b history', history)
   return (
     <div>
       <h1>Log in</h1>
