@@ -21,3 +21,4 @@ users.get('/',getAllUsers);
 users.get('/info/:uid',getUser)
 
 module.exports = users;
+

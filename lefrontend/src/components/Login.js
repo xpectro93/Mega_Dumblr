@@ -20,7 +20,6 @@ const Login = ({ history }) => {
          //this token can b stored and sent to the backend to allow user to use something that is protected by middleware;token is a obj
          console.log('this is my uid =>', res.user.uid)
          let call = await axios.get(`http://localhost:3001/api/users/info/${res.user.uid}`);
-         debugger
          console.log('This is call => ', call);
         history.push("/");
       } catch (error) {
@@ -35,19 +34,20 @@ const Login = ({ history }) => {
   if (currentUser) {
     return <Redirect to="/" />;
   }
-
+  // if(currentUser !== null && history.location.pathname === "/login"){
+  //   return (<h1>SADAJDHAJKDHLKAJHDJAHDKASHDKJAHDKJASHDAKJDHAKJSHDAKJDHSJK</h1>)
+  // }
+  console.log('this b history', history)
   return (
     <div>
       <h1>Log in</h1>
       <form onSubmit={handleLogin}>
-        <label>
-          Email
+        
           <input name="email" type="email" placeholder="Email" />
-        </label>
-        <label>
-          Password
+        
+        
           <input name="password" type="password" placeholder="Password" />
-        </label>
+        
         <button type="submit">Log in</button>
       </form>
     </div>

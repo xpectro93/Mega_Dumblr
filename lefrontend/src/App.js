@@ -6,10 +6,12 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
+import { Navbar } from './Navbar'
 
 const App = () => {
   return (
     <AuthProvider>
+      <Navbar/>
       <Router>
         <div>
           <PrivateRoute exact path="/" component={Home} />
@@ -17,6 +19,7 @@ const App = () => {
           <Route exact path="/signup" component={SignUp} />
         </div>
       </Router>
+      
     </AuthProvider>
   );
 };
