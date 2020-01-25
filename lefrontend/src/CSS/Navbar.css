@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 :root {
   --main-bg-color: #1b1821;
-  --test-font-color: white;
+  --dark-font-color:#b71f4a;
+  --mid-font-color:#d43664;
+  --light-font-color:#f398b0;
+  --font-color: white;
 }
 ul {
-  width: 100%;
-  padding: 15px 0px 15px;
+  width: 50%;
+  margin-left:25%;
+  padding: 25px 0px 25px;
   list-style: none;
-  background-color: var(--main-bg-color);
-  color: var(--test-font-color);
+  background-color: transparent;
+  /* background-color: var(--main-bg-color, transparent); */
+  color: var(--font-color);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-bottom: 2px solid #d43664;
+  /* border-bottom: 2px solid #d43664; */
 }
 ul li {
-  font-size: 30px;
+  font-size: 20px;
   /* margin: 0 3%; */
-  text-shadow: 1px 1px 2px #d43664, 0 0 25px #f398b0, 0 0 5px #b71f4a;
+  text-shadow: 1px 1px 2px var(--mid-font-color), 0 0 25px var(--light-font-color), 0 0 5px var(--dark-font-color);
   font-family: 'Permanent Marker', cursive;
 }

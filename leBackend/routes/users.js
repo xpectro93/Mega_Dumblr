@@ -2,7 +2,8 @@ const users = require('express').Router();
 const admin = require('./firebase.js');
 const {
   getAllUsers,
-  getUser
+  getUser,
+  createUser,
 } = require('../db/queries/usersQueries.js')
 
 const testTokenFunction = async (req, res, next) => {
@@ -19,7 +20,8 @@ const testTokenFunction = async (req, res, next) => {
   }
 }
 //Get all users;
-// users.get('/',getAllUsers);
+users.get('/',getAllUsers);
+users.post('/', createUser);
 users.post('/test', testTokenFunction,(req,res)=> {
   res.json('Something happened here')
 })

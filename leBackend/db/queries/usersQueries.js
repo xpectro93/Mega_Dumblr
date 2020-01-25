@@ -1,4 +1,4 @@
-const { any, one } = require ('./index.js');
+const {any, one} = require ('./index.js');
 // id SERIAL PRIMARY KEY,
 //   username VARCHAR NOT NULL UNIQUE,
 //   uid VARCHAR NOT NULL UNIQUE,
@@ -9,7 +9,9 @@ const { any, one } = require ('./index.js');
 
 const getAllUsers = async (req, res, next) => {
   try {
-    let allUsers = await any ('SELECT id, username, email, bio, pic_url FROM users');
+    let allUsers = await any (
+      'SELECT id, username, email, bio, pic_url FROM users'
+    );
     res.status (200).json ({
       message: 'Got all users',
       users: allUsers,
@@ -19,9 +21,9 @@ const getAllUsers = async (req, res, next) => {
   }
 };
 const getUser = async (req, res, next) => {
-  let { uid } = req.params;
+  let {uid} = req.params;
   try {
-    let user = await one ('SELECT * FROM users WHERE uid=$1',uid);
+    let user = await one ('SELECT * FROM users WHERE uid=$1', uid);
     res.status (200).json ({
       message: user,
       uid: uid,
@@ -31,7 +33,25 @@ const getUser = async (req, res, next) => {
   }
 };
 
+const createUser = async (req, res, next) => {
+  try {
+    let newUser = await one (
+      'INSERT INTO users (uid, username, email, bio, pic_url) VALUES (${uid},${username},${email}, ${bio}, ${profile_pic}) RETURNING *'
+    );
+    res.status (200).json ({
+      message: "New user has been created",
+      user: newUser
+    })
+
+  }catch (err) {
+    res.status (400).json ('user could not be created')
+  }
+ 
+
+};
+
 module.exports = {
   getAllUsers,
   getUser,
+  createUser
 };

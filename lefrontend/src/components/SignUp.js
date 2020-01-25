@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
 import {withRouter} from 'react-router';
 import firebase from '../firebase.js';
+import axios from 'axios';
 
 const SignUp = ({history}) => {
   const handleSignUp = useCallback (
@@ -11,7 +12,7 @@ const SignUp = ({history}) => {
         let res = await firebase
           .auth ()
           .createUserWithEmailAndPassword (email.value, password.value);
-          console.log('Sign-up Res=>',res)
+          let createUser = await axios.post('http://localhost:3001/api/users/',{})
         history.push ('/');
       } catch (error) {
         alert (error);

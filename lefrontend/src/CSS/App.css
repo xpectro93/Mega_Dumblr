@@ -130,7 +130,11 @@ table {
 
 :root {
   --main-bg-color: #1b1821;
-  --test-font-color: white;
+  --dark-font-color:#b71f4a;
+  --mid-font-color:#d43664;
+  --light-font-color:#f398b0;
+  --font-color: white;
+  --contrast-color:rgb(41, 191, 194);
 }
 /* CSS */
 body {
@@ -182,6 +186,7 @@ form button {
 	font-size:20px;
 	color:white;
 }
+
 form button:hover {
 	cursor:pointer;
 }
