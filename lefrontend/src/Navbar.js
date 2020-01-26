@@ -3,7 +3,8 @@ import './CSS/Navbar.css';
 
 export const Navbar =(props)=>(
   <ul>
-    <li>About</li>
+    <li>D</li>
+    <input></input>
     <li>Projects</li>
     <li>THIS IS 3</li>
     <li>THIS IS 4</li>
