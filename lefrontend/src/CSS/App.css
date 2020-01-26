@@ -127,6 +127,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+*{
+  outline:none;
+}
 
 :root {
   --main-bg-color: #1b1821;
@@ -157,6 +160,7 @@ body {
   background-size: cover;
   background-color: var(--main-bg-color);
 }
+
 form {
   display: flex;
   flex-direction: column;

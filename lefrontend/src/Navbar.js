@@ -5,7 +5,7 @@ export const Navbar =(props)=>(
   <ul>
     <span id='nav-left'>
       <li>D</li>
-      <input></input>
+      <input placeholder="Search"></input>
       </span>
     <span id='nav-right'>
       <li>Projects</li>

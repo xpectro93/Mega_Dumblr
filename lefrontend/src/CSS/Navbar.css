@@ -6,6 +6,23 @@
   --light-font-color:#f398b0;
   --font-color: white;
 }
+@keyframes colors {
+  0% {
+    color:rgb(241, 241, 193);
+  }
+  25%{
+    color:rgb(235, 213, 172);
+  }
+  50%{
+    color:rgb(240, 158, 158);
+  }
+  75%{
+    color: rgb(230, 122, 230);
+  }
+  100%{
+    color:rgb(135, 135, 236);
+  }
+}
 ul {
   width: 100%;
   padding: 20px 0px 20px;
@@ -28,11 +45,30 @@ ul li {
 #nav-left, #nav-right {
   display:flex;
   flex-direction: row;
-  width:30%;
+  width:40%;
   justify-content: space-around;
 }
 #nav-left input {
   background-color: transparent;
-  width:80%;
+  width:50px;
   height:35px;
+  border: 2px solid var(--dark-font-color);
+  background-color: var(--main-bg-color);
+  color: var(--light-font-color);
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  border-radius: 50%;
+  transition: width .75s ease-in-out, border-radius .5s ease-in-out;
+}
+#nav-left input:focus {
+  width:485px;
+  border-radius: 2px;
+}
+#nav-left li {
+  font-size: 40px;
+  padding-left:10px;
+  padding-right:10px;
+}
+#nav-left li:hover {
+  animation: colors 1s infinite;
 }
