@@ -7,21 +7,32 @@
   --font-color: white;
 }
 ul {
-  width: 50%;
-  margin-left:25%;
-  padding: 25px 0px 25px;
+  width: 100%;
+  padding: 20px 0px 20px;
   list-style: none;
   background-color: transparent;
   /* background-color: var(--main-bg-color, transparent); */
   color: var(--font-color);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   /* border-bottom: 2px solid #d43664; */
 }
+
 ul li {
   font-size: 20px;
   /* margin: 0 3%; */
   text-shadow: 1px 1px 2px var(--mid-font-color), 0 0 25px var(--light-font-color), 0 0 5px var(--dark-font-color);
   font-family: 'Permanent Marker', cursive;
+}
+#nav-left, #nav-right {
+  display:flex;
+  flex-direction: row;
+  width:30%;
+  justify-content: space-around;
+}
+#nav-left input {
+  background-color: transparent;
+  width:80%;
+  height:35px;
 }
