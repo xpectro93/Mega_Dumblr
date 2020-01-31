@@ -8,12 +8,13 @@ import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
 import { Navbar } from './Navbar'
 
+
 const App = () => {
   return (
     <AuthProvider>
-      <Navbar/>
       <Router>
-        <div>
+      <div className='test'>
+      <Navbar/>
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />

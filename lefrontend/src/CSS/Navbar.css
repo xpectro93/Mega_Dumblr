@@ -1,31 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 :root {
   --main-bg-color: #1b1821;
-  --dark-font-color:#b71f4a;
-  --mid-font-color:#d43664;
-  --light-font-color:#f398b0;
+  --dark-font-color: #b71f4a;
+  --mid-font-color: #d43664;
+  --light-font-color: #f398b0;
   --font-color: white;
 }
 @keyframes colors {
   0% {
-    color:rgb(241, 241, 193);
+    color: rgb(241, 241, 193);
   }
-  25%{
-    color:rgb(235, 213, 172);
+  20% {
+    color: rgb(235, 213, 172);
   }
-  50%{
-    color:rgb(240, 158, 158);
+  40% {
+    color: rgb(240, 158, 158);
   }
-  75%{
+  60% {
     color: rgb(230, 122, 230);
   }
-  100%{
-    color:rgb(135, 135, 236);
+  80% {
+    color: rgb(135, 135, 236);
+  }
+  100% {
+    color: rgb(135, 236, 157);
   }
 }
-ul {
+nav {
   width: 100%;
-  padding: 20px 0px 20px;
+  padding: 10px 0px 10px;
   list-style: none;
   background-color: transparent;
   /* background-color: var(--main-bg-color, transparent); */
@@ -33,42 +36,57 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border-bottom: 2px solid #d43664; */
+  position:fixed;
+  background-image: url(../main-theme.png);
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
+  border-bottom: 2px solid #d43664;
 }
 
-ul li {
+nav li {
   font-size: 20px;
   /* margin: 0 3%; */
-  text-shadow: 1px 1px 2px var(--mid-font-color), 0 0 25px var(--light-font-color), 0 0 5px var(--dark-font-color);
+  text-shadow: 1px 1px 2px var(--mid-font-color),
+    0 0 25px var(--light-font-color), 0 0 5px var(--dark-font-color);
   font-family: 'Permanent Marker', cursive;
 }
-#nav-left, #nav-right {
-  display:flex;
+#nav-left,
+#nav-right {
+  display: flex;
   flex-direction: row;
-  width:40%;
+  width: 40%;
   justify-content: space-around;
 }
 #nav-left input {
   background-color: transparent;
-  width:50px;
-  height:35px;
-  border: 2px solid var(--dark-font-color);
-  background-color: var(--main-bg-color);
+  width: 75px;
+  height: 35px;
+  border: 0px solid var(--dark-font-color);
   color: var(--light-font-color);
   font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
   text-align: center;
   border-radius: 50%;
-  transition: width .75s ease-in-out, border-radius .5s ease-in-out;
+  background-color: transparent;
+  transition: width 0.75s ease-in-out, border-radius 0.5s ease-in-out,
+    background-color 0.75s ease-in-out;
+}
+#nav-left input::placeholder {
+  color: cyan;
 }
 #nav-left input:focus {
-  width:485px;
+  width: 485px;
   border-radius: 2px;
+  background-color: var(--main-bg-color);
+  border: 2px solid var(--dark-font-color);
 }
 #nav-left li {
   font-size: 40px;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #nav-left li:hover {
   animation: colors 1s infinite;
 }
+

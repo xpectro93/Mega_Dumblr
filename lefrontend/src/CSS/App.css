@@ -154,12 +154,13 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-image: url(../main-theme.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: var(--main-bg-color);
+  /* background-color:red;
+  background:url(../md_icons/v2.png); */
+  background: rgb(21,29,40);
+background: linear-gradient(180deg, rgba(21,29,40,1) 36%, rgba(232,100,121,1) 100%);
+
 }
+
 
 form {
   display: flex;
@@ -204,5 +205,74 @@ form button:hover {
   cursor:pointer;
   animation: shadow-pulse 1.75s infinite;
 }
+
+
+#posts {
+  width:63%;
+  /* background: red;
+  opacity: 50%; */
+}
+
+#side-dashboard {
+  width:33%;
+  height:100vh;
+  /* background:green;
+  opacity: 50%; */
+}
+#post-container {
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+#post-container div{
+  width:85%;
+}
+#post-container div ul{
+  width:auto;
+  display:flex;
+  justify-content: space-around;
+}
+.user-pic{
+  width:70px;
+  height:70px;
+  background: linear-gradient(321deg, rgba(2,5,125,1) 36%, rgba(255,0,114,1) 100%);
+  border-radius: 5px;
+  /* position:fixed; */
+}
+#post-body{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#post {
+  width:85%;
+  height:500px;
+  background:url('https://previews.123rf.com/images/dmitriyrazinkov/dmitriyrazinkov1709/dmitriyrazinkov170900193/85809462-retro-background-futuristic-landscape-1980s-style-digital-retro-landscape-cyber-surface-80s-party-ba.jpg');
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#main {
+  width:70%;
+  height:100vh;
+  margin:auto;
+  display:flex;
+  justify-content: space-between;
+  padding-top:110px;
+  
+}
+.test {
+  width:100%;
+  height:100vh;
+  /* background-image: url(../main-theme.png); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  margin-top:10px 
+}
+
+
 
 

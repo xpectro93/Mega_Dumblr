@@ -14,10 +14,6 @@ const Login = ({ history }) => {
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
           //res can b obtained by => res.user.uid
-
-          // console.log('Login Res => ', res);
-
-          // TODO: figure out how to get this token to work on backened;
           let token = await firebase.auth().currentUser.getIdToken(false);
           token = {token:token}
           let testResp = await axios.post('http://localhost:3001/api/users/test',token )
@@ -27,10 +23,6 @@ const Login = ({ history }) => {
          firebase.auth().onAuthStateChanged(user => {
            console.log('this is user at onAuthStateChanged => ', user)
          })
-
-
-
-
          console.log('this is my uid =>', res.user.uid)
          let call = await axios.get(`http://localhost:3001/api/users/info/${res.user.uid}`);
          console.log('This is call => ', call);
@@ -38,8 +30,8 @@ const Login = ({ history }) => {
       } catch (error) {
         alert(error);
       }
-    },
-    [history]
+    }
+    //if it ever breaks, => , [history]
   );
 
   const { currentUser } = useContext(AuthContext);
@@ -55,9 +47,9 @@ const Login = ({ history }) => {
       <h1>Log in</h1>
       <form onSubmit={handleLogin}>
         
-          <input name="email" type="email" placeholder="Email" />
+          <input name="email" type="email" placeholder="Email" autoComplete='off' />
         
-        
+      
           <input name="password" type="password" placeholder="Password" />
         
         <button type="submit">Log in</button>
@@ -67,7 +59,3 @@ const Login = ({ history }) => {
 };
 
 export default withRouter(Login);
-
-//test user uid;
-//a0B19xDiuJdh5DwjMA5FErIkaQ53
-//a0B19xDiuJdh5DwjMA5FErIkaQ53

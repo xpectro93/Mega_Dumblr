@@ -1,17 +1,18 @@
 import React from 'react';
 import './CSS/Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar =(props)=>(
-  <ul>
+  <nav>
     <span id='nav-left'>
       <li>D</li>
       <input placeholder="Search"></input>
       </span>
     <span id='nav-right'>
-      <li>Projects</li>
-      <li>THIS IS 3</li>
+      <li>Home</li>
+      <li>Explore</li>
       <li>THIS IS 4</li>
-      <li>THIS IS 5</li>
+      <li><NavLink to='/test'>Test</NavLink></li>
     </span>
-  </ul>
+  </nav>
 )
