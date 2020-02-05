@@ -154,11 +154,8 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  /* background-color:red;
-  background:url(../md_icons/v2.png); */
-  background: rgb(21,29,40);
-background: linear-gradient(180deg, rgba(21,29,40,1) 36%, rgba(232,100,121,1) 100%);
-
+  background-color:red;
+  background:url(../md_icons/v2.png);
 }
 
 
@@ -266,7 +263,7 @@ form button:hover {
 .test {
   width:100%;
   height:100vh;
-  /* background-image: url(../main-theme.png); */
+  background-image: url(../main-theme.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; 
